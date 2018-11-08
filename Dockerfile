@@ -11,6 +11,9 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/* ; \
     :
 
+RUN python -m venv ~/.cache/venv/
+ENV VIRTUAL_ENV /root/.cache/venv/
+ENV PATH /root/.cache/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 RUN set -eux ; \
     pip --no-cache-dir install \
         aiosmtplib \
@@ -27,6 +30,3 @@ RUN set -eux ; \
     ; \
     :
 
-RUN python -m venv ~/.cache/venv/
-ENV VIRTUAL_ENV /root/.cache/venv/
-ENV PATH /root/.cache/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
