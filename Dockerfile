@@ -26,3 +26,7 @@ RUN set -eux ; \
         sanic_session \
     ; \
     :
+
+RUN python -m venv ~/.cache/venv/
+ENV VIRTUAL_ENV /root/.cache/venv/
+ENV PATH /root/.cache/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
