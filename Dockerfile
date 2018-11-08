@@ -13,10 +13,16 @@ RUN set -eux; \
 
 RUN set -eux ; \
     pip --no-cache-dir install \
+        aiosmtplib \
         asyncpg \
+        bcrypt \
+        black \
+        clize \
         flake8 \
+        poetry \
         pyicu \
         pytest \
         sanic \
+        sanic_session \
     ; \
     :
